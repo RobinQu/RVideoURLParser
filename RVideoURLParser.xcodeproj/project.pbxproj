@@ -19,6 +19,7 @@
 		254DF960177D68CF003A3429 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254DF948177D68CF003A3429 /* UIKit.framework */; };
 		254DF968177D68CF003A3429 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254DF966177D68CF003A3429 /* InfoPlist.strings */; };
 		254DF96A177D68CF003A3429 /* RVideoURLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254DF969177D68CF003A3429 /* RVideoURLParserTests.m */; };
+		254DF977177D6C17003A3429 /* RVideoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 254DF976177D6C17003A3429 /* RVideoParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,9 @@
 		254DF965177D68CF003A3429 /* RVideoURLParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RVideoURLParserTests-Info.plist"; sourceTree = "<group>"; };
 		254DF967177D68CF003A3429 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		254DF969177D68CF003A3429 /* RVideoURLParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RVideoURLParserTests.m; sourceTree = "<group>"; };
+		254DF974177D6BD2003A3429 /* RVideoParserStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoParserStrategy.h; sourceTree = "<group>"; };
+		254DF975177D6C17003A3429 /* RVideoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoParser.h; sourceTree = "<group>"; };
+		254DF976177D6C17003A3429 /* RVideoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVideoParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		254DF938177D68CF003A3429 = {
 			isa = PBXGroup;
 			children = (
+				254DF973177D6B60003A3429 /* Classes */,
 				254DF94A177D68CF003A3429 /* RVideoURLParser */,
 				254DF963177D68CF003A3429 /* RVideoURLParserTests */,
 				254DF943177D68CF003A3429 /* Frameworks */,
@@ -142,6 +147,16 @@
 				254DF966177D68CF003A3429 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		254DF973177D6B60003A3429 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				254DF974177D6BD2003A3429 /* RVideoParserStrategy.h */,
+				254DF975177D6C17003A3429 /* RVideoParser.h */,
+				254DF976177D6C17003A3429 /* RVideoParser.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +257,7 @@
 			files = (
 				254DF951177D68CF003A3429 /* main.m in Sources */,
 				254DF955177D68CF003A3429 /* RAppDelegate.m in Sources */,
+				254DF977177D6C17003A3429 /* RVideoParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
