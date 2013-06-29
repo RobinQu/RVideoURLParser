@@ -32,8 +32,9 @@
 
 3. 关于`RVideoMeta`: 本身没有什么功能的一个数据结构，存储视频的解析信息，有方便的getter。详细有那些属性请参考源代码了。
 
+4. 并不是所有字段都是可以获取的，视频的详细介绍`RVideoMeta#description`、时长`RVideoMeta#duration`，受API限制是不可靠的。
 
-##关于Tudou
+#关于Tudou
 
 土豆有三种视频资源
 
