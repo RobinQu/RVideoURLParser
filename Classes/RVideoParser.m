@@ -8,7 +8,8 @@
 
 #import "RVideoParser.h"
 #import "RYoukuStrategy.h"
-#import <objc/runtime.h>
+#import "RTudouStrategy.h"
+#import "RVideoURLParserCommon.h"
 
 @interface RVideoParser ()
 
@@ -23,7 +24,7 @@
     static RVideoParser *parser = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSSet *set = [NSSet setWithObjects:[RYoukuStrategy class], nil];
+        NSSet *set = [NSSet setWithObjects:[RYoukuStrategy class], [RTudouStrategy class], nil];
         parser = [[RVideoParser alloc] initWithStrategies:set];
     });
     return parser;
@@ -66,10 +67,16 @@
     return strategy;
 }
 
-- (void)parseWithURL:(NSURL *)url callback:(void (^)(NSError *, RVideoMeta *))callback
+- (void)parseWithURL:(NSURL *)url callback:(VideoParserCallback)callback
 {
     id<RVideoParserStrategy> strategy = [self findStrategyForURL:url];
-    [strategy parseURL:url withCallback:callback];
+    if (strategy) {
+        [strategy parseURL:url withCallback:callback];
+    } else {
+        if (callback) {
+            callback([NSError errorWithDomain:kDefaultErrorDomain code:kVideoParserParsingErrorCode userInfo:nil], nil);
+        }
+    }
 }
 
 @end

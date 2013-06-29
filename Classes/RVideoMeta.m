@@ -12,7 +12,7 @@
 
 - (NSDictionary *)digest
 {
-    return @{@"title":self.title, @"preview":self.preview.absoluteString, @"swf":self.swf.absoluteString, @"mobile":self.mobile.absoluteString, @"link":self.link.absoluteString};
+    return @{@"title":self.title, @"preview":self.preview.absoluteString, @"swf":self.swf.absoluteString, @"mobile":self.mobile.absoluteString, @"duration": self.duration};
 }
 
 @end

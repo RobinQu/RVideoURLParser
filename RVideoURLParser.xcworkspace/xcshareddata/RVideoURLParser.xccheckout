@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>39028D6C-FB31-402A-A095-089027A7A6AE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RVideoURLParser</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>76761FC3-CF68-4F87-B0D8-0FBC6067CD86</key>
+		<string>ssh://github.com/RobinQu/RVideoURLParser.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RVideoURLParser.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>76761FC3-CF68-4F87-B0D8-0FBC6067CD86</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/RobinQu/RVideoURLParser.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>76761FC3-CF68-4F87-B0D8-0FBC6067CD86</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>76761FC3-CF68-4F87-B0D8-0FBC6067CD86</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RVideoURLParser</string>
+		</dict>
+	</array>
+</dict>
+</plist>

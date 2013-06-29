@@ -67,7 +67,7 @@ static NSRegularExpression *urlRegex;
             meta.title = title;
             meta.swf = [NSURL URLWithString:[NSString stringWithFormat:YoukuVideoSWFURL, vid]];
             meta.mobile = [NSURL URLWithString:[NSString stringWithFormat:YoukuVideoM3U8URL, vid]];
-            meta.link = url;
+            meta.duration = [NSNumber numberWithFloat:[[dataObj valueForKey:@"seconds"] floatValue]];
             if (callback) {
                 callback(nil, meta);
             }

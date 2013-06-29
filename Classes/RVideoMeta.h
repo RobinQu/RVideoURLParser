@@ -11,10 +11,11 @@
 @interface RVideoMeta : NSObject
 
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSURL *preview;
 @property (nonatomic, retain) NSURL *swf;
 @property (nonatomic, retain) NSURL *mobile;
-@property (nonatomic, retain) NSURL *link;
+@property (nonatomic, retain) NSNumber *duration;
 
 - (NSDictionary *)digest;
 

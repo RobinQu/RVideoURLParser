@@ -18,12 +18,12 @@
 		254DF95F177D68CF003A3429 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254DF944177D68CF003A3429 /* Foundation.framework */; };
 		254DF960177D68CF003A3429 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 254DF948177D68CF003A3429 /* UIKit.framework */; };
 		254DF968177D68CF003A3429 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 254DF966177D68CF003A3429 /* InfoPlist.strings */; };
-		254DF96A177D68CF003A3429 /* RVideoURLParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 254DF969177D68CF003A3429 /* RVideoURLParserTests.m */; };
 		254DF977177D6C17003A3429 /* RVideoParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 254DF976177D6C17003A3429 /* RVideoParser.m */; };
 		254DF97A177D6EC2003A3429 /* RVideoMeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 254DF979177D6EC2003A3429 /* RVideoMeta.m */; };
 		254DF97E177D717D003A3429 /* RYoukuStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 254DF97D177D717D003A3429 /* RYoukuStrategy.m */; };
 		25605565177E787400297F80 /* RVideoParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25605564177E787400297F80 /* RVideoParserTest.m */; };
 		25605568177E78B500297F80 /* RTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 25605567177E78B500297F80 /* RTestCase.m */; };
+		2560556B177E805C00297F80 /* RTudouStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2560556A177E805C00297F80 /* RTudouStrategy.m */; };
 		54C9961C725F421E8C65D147 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DED505EF25114563AD945D14 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,6 @@
 		254DF95D177D68CF003A3429 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		254DF965177D68CF003A3429 /* RVideoURLParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RVideoURLParserTests-Info.plist"; sourceTree = "<group>"; };
 		254DF967177D68CF003A3429 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		254DF969177D68CF003A3429 /* RVideoURLParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RVideoURLParserTests.m; sourceTree = "<group>"; };
 		254DF974177D6BD2003A3429 /* RVideoParserStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoParserStrategy.h; sourceTree = "<group>"; };
 		254DF975177D6C17003A3429 /* RVideoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoParser.h; sourceTree = "<group>"; };
 		254DF976177D6C17003A3429 /* RVideoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVideoParser.m; sourceTree = "<group>"; };
@@ -65,6 +64,8 @@
 		25605564177E787400297F80 /* RVideoParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVideoParserTest.m; sourceTree = "<group>"; };
 		25605566177E78B500297F80 /* RTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTestCase.h; sourceTree = "<group>"; };
 		25605567177E78B500297F80 /* RTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTestCase.m; sourceTree = "<group>"; };
+		25605569177E805C00297F80 /* RTudouStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTudouStrategy.h; sourceTree = "<group>"; };
+		2560556A177E805C00297F80 /* RTudouStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTudouStrategy.m; sourceTree = "<group>"; };
 		6BD4D61395F64607BB3888AE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DED505EF25114563AD945D14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,11 +153,10 @@
 		254DF963177D68CF003A3429 /* RVideoURLParserTests */ = {
 			isa = PBXGroup;
 			children = (
+				25605564177E787400297F80 /* RVideoParserTest.m */,
 				25605566177E78B500297F80 /* RTestCase.h */,
 				25605567177E78B500297F80 /* RTestCase.m */,
-				254DF969177D68CF003A3429 /* RVideoURLParserTests.m */,
 				254DF964177D68CF003A3429 /* Supporting Files */,
-				25605564177E787400297F80 /* RVideoParserTest.m */,
 			);
 			path = RVideoURLParserTests;
 			sourceTree = "<group>";
@@ -189,6 +189,8 @@
 			children = (
 				254DF97C177D717D003A3429 /* RYoukuStrategy.h */,
 				254DF97D177D717D003A3429 /* RYoukuStrategy.m */,
+				25605569177E805C00297F80 /* RTudouStrategy.h */,
+				2560556A177E805C00297F80 /* RTudouStrategy.m */,
 			);
 			name = Strategy;
 			sourceTree = "<group>";
@@ -327,6 +329,7 @@
 				254DF97E177D717D003A3429 /* RYoukuStrategy.m in Sources */,
 				254DF977177D6C17003A3429 /* RVideoParser.m in Sources */,
 				254DF97A177D6EC2003A3429 /* RVideoMeta.m in Sources */,
+				2560556B177E805C00297F80 /* RTudouStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +337,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				254DF96A177D68CF003A3429 /* RVideoURLParserTests.m in Sources */,
 				25605568177E78B500297F80 /* RTestCase.m in Sources */,
 				25605565177E787400297F80 /* RVideoParserTest.m in Sources */,
 			);
@@ -522,7 +524,7 @@
 				254DF96C177D68CF003A3429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		254DF96D177D68CF003A3429 /* Build configuration list for PBXNativeTarget "RVideoURLParser" */ = {
 			isa = XCConfigurationList;
@@ -531,7 +533,7 @@
 				254DF96F177D68CF003A3429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		254DF970177D68CF003A3429 /* Build configuration list for PBXNativeTarget "RVideoURLParserTests" */ = {
 			isa = XCConfigurationList;
@@ -540,7 +542,7 @@
 				254DF972177D68CF003A3429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

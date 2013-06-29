@@ -11,7 +11,8 @@
 
 #define kDefaultErrorDomain @"com.elfvision.VideoURLParser"
 #define kVideoParserParsingErrorCode 1
-#define kVideoParserRequestErrorCode 1
+#define kVideoParserRequestErrorCode 2
+#define kVideoParserNotSupportedErrorCode 2
 
 typedef void (^VideoParserCallback)(NSError *, RVideoMeta *);
 
