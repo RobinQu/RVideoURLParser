@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+
+@class RVideoMeta;
+
 @protocol RVideoParserStrategy <NSObject>
 
++ (BOOL)canHandleURL:(NSURL *)url;
+- (void)parseURL:(NSURL *)url withCallback:(void(^)(NSError *error, RVideoMeta *meta))callback;
 
 @end

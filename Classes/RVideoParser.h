@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RVideoMeta.h"
+#import "RVideoParserStrategy.h"
+
+
 
 @interface RVideoParser : NSObject
+
++ (id)sharedVideoParser;
+
+- (id)initWithStrategies:(NSSet *)strategies;
+- (void)addStrategy:(id<RVideoParserStrategy>)strategy;
+- (void)parseWithURL:(NSURL *)url callback:(void(^)(NSError *error, RVideoMeta *meta))callback;
 
 @end

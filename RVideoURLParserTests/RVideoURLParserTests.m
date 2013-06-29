@@ -28,9 +28,22 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testBasiscRegex
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSString *expression = [NSRegularExpression escapedPatternForString:@"youku.com"];
+    NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:expression options:0 error:nil];
+    NSString *urlString1 = @"http://v.youku.com/v_show/id_XMjI4MDM4NDc2.html";
+    NSUInteger occurence1 = [regex numberOfMatchesInString:urlString1 options:0 range:NSMakeRange(0, urlString1.length)];
+    XCTAssertTrue(occurence1>0, @"should find any occurence in url");
+    NSString *urlString2 = @"http://google.com/test.html";
+    NSUInteger occurence2 = [regex numberOfMatchesInString:urlString2 options:0 range:NSMakeRange(0, urlString2.length)];
+    XCTAssertTrue(occurence2==0, @"should find none occurence in url");
+    
+}
+
+- (void)testRegex1
+{
+    
 }
 
 @end
