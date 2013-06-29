@@ -18,6 +18,15 @@
     pod "RVideoURLParser", "~0.0.1"
 
 
+##Git submodule
+
+先获取代码
+
+    git submodule add https://github.com/RobinQu/RSpecs.git
+    git submodule update --init
+
+然后在XCode里面把`Classes`里面的文件都添加到工程中。 Done！
+
 #使用
 
 ##Easy模式
