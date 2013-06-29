@@ -113,4 +113,24 @@
 //    }];
 //}
 
+- (void)testSohuVideo
+{
+    __block BOOL done = NO;
+    NSURL *url = [NSURL URLWithString:@"http://tv.sohu.com/20130629/n380221534.shtml"];
+    [[RVideoParser sharedVideoParser] parseWithURL:url callback:^(NSError *error, RVideoMeta *meta) {
+        done = YES;
+        XCTAssertNil(error, @"should have no error");
+        XCTAssertNotNil(meta, @"should be truthy");
+        XCTAssertNotNil(meta.swf, @"should have swf link");
+        XCTAssertNotNil(meta.title, @"should have title");
+        XCTAssertNotNil(meta.preview.absoluteString, @"should have preview image url");
+        XCTAssertNotNil(meta.mobile.absoluteString, @"should have mobile video url");
+        NSLog(@"meta %@", [meta digest]);
+        
+    }];
+    [self waitWithTimeout:10.0 forSuccessInBlock:^BOOL{
+        return done;
+    }];
+}
+
 @end

@@ -9,6 +9,7 @@
 #import "RVideoParser.h"
 #import "RYoukuStrategy.h"
 #import "RTudouStrategy.h"
+#import "RSohuStrategy.h"
 #import "RVideoURLParserCommon.h"
 
 @interface RVideoParser ()
@@ -24,7 +25,7 @@
     static RVideoParser *parser = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSSet *set = [NSSet setWithObjects:[RYoukuStrategy class], [RTudouStrategy class], nil];
+        NSSet *set = [NSSet setWithObjects:[RYoukuStrategy class], [RTudouStrategy class], [RSohuStrategy class], nil];
         parser = [[RVideoParser alloc] initWithStrategies:set];
     });
     return parser;

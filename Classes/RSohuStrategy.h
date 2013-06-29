@@ -1,5 +1,5 @@
 //
-//  RTudouStrategy.h
+//  RSohuStrategy.h
 //  RVideoURLParser
 //
 //  Created by Robin Qu on 13-6-29.
@@ -8,11 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "RVideoParserStrategy.h"
-#import "RVideoURLParserCommon.h"
 
-@interface RTudouStrategy : NSObject <RVideoParserStrategy>
-
-
-+ (void)configureAPIKey:(NSString *)key;
+@interface RSohuStrategy : NSObject <RVideoParserStrategy>
 
 @end

@@ -55,7 +55,7 @@ static NSRegularExpression *urlRegex;
 - (void)requestVideoMeta:(NSString *)vid callback:(VideoParserCallback)callback
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:YoukuVideoInfoURL, vid]];
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:10000];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:10];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSArray *data = [JSON valueForKey:@"data"];
         if (data && data.count) {

@@ -72,7 +72,7 @@ static NSString *apiKey = nil;
 - (void)requestVideoMeta:(NSString *)iCode callback:(VideoParserCallback)callback
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:TudouItemQueryAPI, apiKey, iCode]];
-    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:10000];
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:10];
     AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSArray *results = [JSON valueForKeyPath:@"multiResult.results"];
         if (results && results.count) {
@@ -83,7 +83,8 @@ static NSString *apiKey = nil;
             meta.description = [data valueForKey:@"description"];
             meta.swf = [NSURL URLWithString:[NSString stringWithFormat:TudouVideoSWFURL, iCode]];
             meta.mobile = [NSURL URLWithString:[NSString stringWithFormat:TudouVideoM3U8URL, [data valueForKey:@"itemId"]]];
-            meta.duration = [NSNumber numberWithFloat:[[data valueForKey:@"totalTime"] floatValue]/60/1000];
+            //totaltime is measured in ms; convert to seconds
+            meta.duration = [NSNumber numberWithFloat:[[data valueForKey:@"totalTime"] floatValue]/1000];
             if (callback) {
                 callback(nil, meta);
             }

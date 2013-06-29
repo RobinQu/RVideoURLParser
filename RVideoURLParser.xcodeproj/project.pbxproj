@@ -24,6 +24,7 @@
 		25605565177E787400297F80 /* RVideoParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25605564177E787400297F80 /* RVideoParserTest.m */; };
 		25605568177E78B500297F80 /* RTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 25605567177E78B500297F80 /* RTestCase.m */; };
 		2560556B177E805C00297F80 /* RTudouStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2560556A177E805C00297F80 /* RTudouStrategy.m */; };
+		25E4374D177EC8EA00ACC763 /* RSohuStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4374C177EC8EA00ACC763 /* RSohuStrategy.m */; };
 		54C9961C725F421E8C65D147 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DED505EF25114563AD945D14 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		25605567177E78B500297F80 /* RTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTestCase.m; sourceTree = "<group>"; };
 		25605569177E805C00297F80 /* RTudouStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTudouStrategy.h; sourceTree = "<group>"; };
 		2560556A177E805C00297F80 /* RTudouStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTudouStrategy.m; sourceTree = "<group>"; };
+		25E4374B177EC8EA00ACC763 /* RSohuStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSohuStrategy.h; sourceTree = "<group>"; };
+		25E4374C177EC8EA00ACC763 /* RSohuStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSohuStrategy.m; sourceTree = "<group>"; };
 		6BD4D61395F64607BB3888AE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DED505EF25114563AD945D14 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,6 +194,8 @@
 				254DF97D177D717D003A3429 /* RYoukuStrategy.m */,
 				25605569177E805C00297F80 /* RTudouStrategy.h */,
 				2560556A177E805C00297F80 /* RTudouStrategy.m */,
+				25E4374B177EC8EA00ACC763 /* RSohuStrategy.h */,
+				25E4374C177EC8EA00ACC763 /* RSohuStrategy.m */,
 			);
 			name = Strategy;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				254DF977177D6C17003A3429 /* RVideoParser.m in Sources */,
 				254DF97A177D6EC2003A3429 /* RVideoMeta.m in Sources */,
 				2560556B177E805C00297F80 /* RTudouStrategy.m in Sources */,
+				25E4374D177EC8EA00ACC763 /* RSohuStrategy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
