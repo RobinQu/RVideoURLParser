@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/RobinQu/RVideoURLParser"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "RobinQu" => "robinqu@gmail.com" }
-  s.source       = { :git => "git@github.com:RobinQu/RVideoURLParser.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/RobinQu/RVideoURLParser.git", :tag => "#{s.version}" }
 
 
   s.platform     = :ios, '5.0'
