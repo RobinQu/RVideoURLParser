@@ -90,6 +90,7 @@
     [self waitWithTimeout:2.0 forSuccessInBlock:^BOOL{
         return done;
     }];
+    
 }
 
 //- (void)testTudouAlbumVideo
