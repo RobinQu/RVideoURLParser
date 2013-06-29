@@ -6,6 +6,17 @@
 * Tudou 土豆
 * Sohu 搜狐
 
+#安装
+
+##CocoaPod
+还没提交到官方的Repo，所以安装之前需要注册私有Repo
+
+    pod repo add robin https://github.com/RobinQu/RSpecs.git master
+
+然后就可以在Podfile里面声明了
+
+    pod "RVideoURLParser", "~0.0.1"
+
 
 #使用
 
