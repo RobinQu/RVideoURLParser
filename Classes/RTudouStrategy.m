@@ -7,23 +7,15 @@
 //
 
 #import "RTudouStrategy.h"
-#import <AFNetworking/AFJSONRequestOperation.h>
-
+#import <AFNetworking.h>
 #import "RVideoMeta.h"
 
 static NSString *const TudouItemQueryAPI = @"http://api.tudou.com/v3/gw?method=item.info.get&appKey=%@&format=&itemCodes=%@";
 static NSString *const TudouVideoSWFURL = @"http://www.tudou.com/v/%@/v.swf";
 static NSString *const TudouVideoM3U8URL = @"http://vr.tudou.com/v2proxy/v2.m3u8?it=%@&st=2&pw=";
 
-static NSString *apiKey = nil;
-
 @implementation RTudouStrategy
 
-
-+ (void)configureAPIKey:(NSString *)key
-{
-    apiKey = key;
-}
 
 + (BOOL)canHandleURL:(NSURL *)url
 {
@@ -37,9 +29,11 @@ static NSString *apiKey = nil;
 //http://www.tudou.com/albumplay/v3rsB9eAMRc.html
 //http://vr.tudou.com/v2proxy/v2.m3u8?it=171228513&st=2&pw=
 //http://i2.tdimg.com/171/228/513/w.jpg
+
+
 - (void)parseURL:(NSURL *)url withCallback:(void (^)(NSError *, RVideoMeta *))callback
 {
-    NSAssert(apiKey, @"should have a valid API key");
+    NSAssert(self.apikey, @"should have a valid API key");
     NSString *iCode = nil;
     NSRegularExpression *iCodeRegex = nil;
     if ([url.absoluteString rangeOfString:@"listplay"].location != NSNotFound) {
@@ -71,9 +65,11 @@ static NSString *apiKey = nil;
 
 - (void)requestVideoMeta:(NSString *)iCode callback:(VideoParserCallback)callback
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:TudouItemQueryAPI, apiKey, iCode]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:TudouItemQueryAPI, self.apikey, iCode]];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:10];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSArray *results = [JSON valueForKeyPath:@"multiResult.results"];
         if (results && results.count) {
             RVideoMeta *meta = [RVideoMeta new];
@@ -93,10 +89,11 @@ static NSString *apiKey = nil;
         if (callback) {
             callback([NSError errorWithDomain:kDefaultErrorDomain code:kVideoParserParsingErrorCode userInfo:nil], nil);
         }
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (callback) {
             callback(error, nil);
         }
+
     }];
     [operation start];
 }

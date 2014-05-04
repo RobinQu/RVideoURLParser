@@ -24,6 +24,7 @@
 		25605565177E787400297F80 /* RVideoParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 25605564177E787400297F80 /* RVideoParserTest.m */; };
 		25605568177E78B500297F80 /* RTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 25605567177E78B500297F80 /* RTestCase.m */; };
 		2560556B177E805C00297F80 /* RTudouStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2560556A177E805C00297F80 /* RTudouStrategy.m */; };
+		25C785F11915CDF200CA4A32 /* RVideoParserStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C785F01915CDF200CA4A32 /* RVideoParserStrategy.m */; };
 		25E4374D177EC8EA00ACC763 /* RSohuStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E4374C177EC8EA00ACC763 /* RSohuStrategy.m */; };
 		54C9961C725F421E8C65D147 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DED505EF25114563AD945D14 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -54,7 +55,6 @@
 		254DF95D177D68CF003A3429 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		254DF965177D68CF003A3429 /* RVideoURLParserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RVideoURLParserTests-Info.plist"; sourceTree = "<group>"; };
 		254DF967177D68CF003A3429 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		254DF974177D6BD2003A3429 /* RVideoParserStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoParserStrategy.h; sourceTree = "<group>"; };
 		254DF975177D6C17003A3429 /* RVideoParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoParser.h; sourceTree = "<group>"; };
 		254DF976177D6C17003A3429 /* RVideoParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVideoParser.m; sourceTree = "<group>"; };
 		254DF978177D6EC2003A3429 /* RVideoMeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoMeta.h; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		25605567177E78B500297F80 /* RTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTestCase.m; sourceTree = "<group>"; };
 		25605569177E805C00297F80 /* RTudouStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTudouStrategy.h; sourceTree = "<group>"; };
 		2560556A177E805C00297F80 /* RTudouStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTudouStrategy.m; sourceTree = "<group>"; };
+		25C785EF1915CDF200CA4A32 /* RVideoParserStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVideoParserStrategy.h; sourceTree = "<group>"; };
+		25C785F01915CDF200CA4A32 /* RVideoParserStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVideoParserStrategy.m; sourceTree = "<group>"; };
 		25E4374B177EC8EA00ACC763 /* RSohuStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSohuStrategy.h; sourceTree = "<group>"; };
 		25E4374C177EC8EA00ACC763 /* RSohuStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSohuStrategy.m; sourceTree = "<group>"; };
 		6BD4D61395F64607BB3888AE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -177,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				254DF97B177D7167003A3429 /* Strategy */,
-				254DF974177D6BD2003A3429 /* RVideoParserStrategy.h */,
 				254DF975177D6C17003A3429 /* RVideoParser.h */,
 				254DF976177D6C17003A3429 /* RVideoParser.m */,
 				254DF978177D6EC2003A3429 /* RVideoMeta.h */,
@@ -196,6 +197,8 @@
 				2560556A177E805C00297F80 /* RTudouStrategy.m */,
 				25E4374B177EC8EA00ACC763 /* RSohuStrategy.h */,
 				25E4374C177EC8EA00ACC763 /* RSohuStrategy.m */,
+				25C785EF1915CDF200CA4A32 /* RVideoParserStrategy.h */,
+				25C785F01915CDF200CA4A32 /* RVideoParserStrategy.m */,
 			);
 			name = Strategy;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				254DF951177D68CF003A3429 /* main.m in Sources */,
 				254DF955177D68CF003A3429 /* RAppDelegate.m in Sources */,
+				25C785F11915CDF200CA4A32 /* RVideoParserStrategy.m in Sources */,
 				254DF97E177D717D003A3429 /* RYoukuStrategy.m in Sources */,
 				254DF977177D6C17003A3429 /* RVideoParser.m in Sources */,
 				254DF97A177D6EC2003A3429 /* RVideoMeta.m in Sources */,
@@ -458,7 +462,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RVideoURLParser/RVideoURLParser-Prefix.pch";
 				INFOPLIST_FILE = "RVideoURLParser/RVideoURLParser-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -474,7 +478,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RVideoURLParser/RVideoURLParser-Prefix.pch";
 				INFOPLIST_FILE = "RVideoURLParser/RVideoURLParser-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

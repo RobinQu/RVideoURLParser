@@ -8,8 +8,8 @@
 
 #import "RYoukuStrategy.h"
 #import "RVideoURLParserCommon.h"
-#import <AFNetworking/AFJSONRequestOperation.h>
 #import "RVideoMeta.h"
+#import <AFNetworking.h>
 
 static NSString *const YoukuVideoInfoURL = @"http://v.youku.com/player/getPlayList/VideoIDS/%@/timezone/+08/version/5/source/out?password=&ran=2513&n=3";
 static NSString *const YoukuVideoSWFURL = @"http://player.youku.com/player.php/sid/%@/v.swf";
@@ -23,7 +23,6 @@ static NSRegularExpression *urlRegex;
 + (void)initialize
 {
     urlRegex = [[NSRegularExpression alloc] initWithPattern:@"youku.com" options:0 error:nil];
-    [AFJSONRequestOperation addAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
 }
 
 + (BOOL)canHandleURL:(NSURL *)url
@@ -56,7 +55,10 @@ static NSRegularExpression *urlRegex;
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:YoukuVideoInfoURL, vid]];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLCacheStorageAllowed timeoutInterval:10];
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:urlRequest success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSArray *data = [JSON valueForKey:@"data"];
         if (data && data.count) {
             NSDictionary *dataObj = [data objectAtIndex:0];
@@ -74,12 +76,13 @@ static NSRegularExpression *urlRegex;
             return;
         }
         if (callback) {
-            callback([NSError errorWithDomain:kDefaultErrorDomain code:kVideoParserParsingErrorCode userInfo:JSON], nil);
+            callback([NSError errorWithDomain:kDefaultErrorDomain code:kVideoParserParsingErrorCode userInfo:[JSON copy]], nil);
         }
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (callback) {
             callback(error, nil);
         }
+
     }];
     [operation start];
 }

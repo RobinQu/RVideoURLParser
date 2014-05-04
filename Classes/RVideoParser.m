@@ -49,19 +49,18 @@
     return self;
 }
 
-- (void)addStrategy:(id<RVideoParserStrategy>)strategy
+- (void)addStrategy:(RVideoParserStrategy*)strategy
 {
     [self.strategies addObject:strategy];
 }
 
-- (id<RVideoParserStrategy>)findStrategyForURL:(NSURL *)url
+- (RVideoParserStrategy*)findStrategyForURL:(NSURL *)url
 {
-    __block id<RVideoParserStrategy> strategy = nil;
-    SEL checker = @selector(canHandleURL:);
+    __block RVideoParserStrategy *strategy = nil;
     [self.strategies enumerateObjectsUsingBlock:^(Class StrategyClass, BOOL *stop) {
-        BOOL canHandle = [StrategyClass respondsToSelector:checker ] && [StrategyClass performSelector:checker withObject:url];
+        BOOL canHandle = [[StrategyClass sharedInstance] canHandleURL:url];
         if (canHandle) {
-            strategy = [StrategyClass new];
+            strategy = [StrategyClass sharedInstance];
             *stop = YES;
         }
     }];
@@ -70,7 +69,7 @@
 
 - (void)parseWithURL:(NSURL *)url callback:(VideoParserCallback)callback
 {
-    id<RVideoParserStrategy> strategy = [self findStrategyForURL:url];
+    RVideoParserStrategy* strategy = [self findStrategyForURL:url];
     if (strategy) {
         [strategy parseURL:url withCallback:callback];
     } else {

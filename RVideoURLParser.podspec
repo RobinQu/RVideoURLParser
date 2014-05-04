@@ -8,11 +8,11 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/RobinQu/RVideoURLParser.git", :tag => "#{s.version}" }
 
 
-  s.platform     = :ios, '5.0'
+  s.platform     = :ios, '6.0'
   s.source_files = 'Classes', 'Classes/**/*.{h,m}'
   s.exclude_files = 'Classes/Exclude'
 
   s.requires_arc = true
 
-  s.dependency 'AFNetworking', '~> 1.3.0'
+  s.dependency 'AFNetworking', "~> 2.0.0"
 end

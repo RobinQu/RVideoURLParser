@@ -10,9 +10,9 @@
 #import "RVideoParserStrategy.h"
 #import "RVideoURLParserCommon.h"
 
-@interface RTudouStrategy : NSObject <RVideoParserStrategy>
+@interface RTudouStrategy : RVideoParserStrategy
 
 
-+ (void)configureAPIKey:(NSString *)key;
+@property (nonatomic, retain) NSString *apikey;
 
 @end

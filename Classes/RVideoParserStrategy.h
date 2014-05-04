@@ -1,19 +1,19 @@
 //
-//  RVideoParser.h
+//  RVideoParserStrategy.h
 //  RVideoURLParser
 //
-//  Created by Robin Qu on 13-6-28.
-//  Copyright (c) 2013年 Robin Qu. All rights reserved.
+//  Created by Robin Qu on 14-5-4.
+//  Copyright (c) 2014年 Robin Qu. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "RVideoMeta.h"
 
-
-@class RVideoMeta;
-
-@protocol RVideoParserStrategy <NSObject>
+@interface RVideoParserStrategy : NSObject
 
 + (BOOL)canHandleURL:(NSURL *)url;
++ (instancetype)sharedInstance;
 - (void)parseURL:(NSURL *)url withCallback:(void(^)(NSError *error, RVideoMeta *meta))callback;
+
 
 @end

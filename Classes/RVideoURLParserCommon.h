@@ -14,7 +14,9 @@
 #define kVideoParserRequestErrorCode 2
 #define kVideoParserNotSupportedErrorCode 2
 
-typedef void (^VideoParserCallback)(NSError *, RVideoMeta *);
+@class RVideoMeta;
+
+typedef void (^VideoParserCallback)(NSError *error, RVideoMeta *meta);
 
 
 #endif

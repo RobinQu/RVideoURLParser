@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "RVideoParserStrategy.h"
 
-@interface RYoukuStrategy : NSObject <RVideoParserStrategy>
+@interface RYoukuStrategy : RVideoParserStrategy
 
 
 

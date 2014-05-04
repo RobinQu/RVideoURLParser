@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "RVideoParserStrategy.h"
 
-@interface RSohuStrategy : NSObject <RVideoParserStrategy>
+@interface RSohuStrategy : RVideoParserStrategy
 
 @end

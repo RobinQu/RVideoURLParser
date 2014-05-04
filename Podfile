@@ -1,1 +1,1 @@
-pod "AFNetworking",   "~> 1.3.0"
+pod "AFNetworking",   "~> 2.0.0"

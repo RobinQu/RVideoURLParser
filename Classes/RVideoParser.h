@@ -17,7 +17,7 @@
 + (id)sharedVideoParser;
 
 - (id)initWithStrategies:(NSSet *)strategies;
-- (void)addStrategy:(id<RVideoParserStrategy>)strategy;
+- (void)addStrategy:(RVideoParserStrategy*)strategy;
 - (void)parseWithURL:(NSURL *)url callback:(VideoParserCallback)callback;
 
 @end
