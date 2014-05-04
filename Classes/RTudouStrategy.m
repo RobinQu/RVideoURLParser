@@ -16,6 +16,7 @@ static NSString *const TudouVideoM3U8URL = @"http://vr.tudou.com/v2proxy/v2.m3u8
 
 @implementation RTudouStrategy
 
+@synthesize apikey = _apikey;
 
 + (BOOL)canHandleURL:(NSURL *)url
 {

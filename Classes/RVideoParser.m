@@ -58,7 +58,7 @@
 {
     __block RVideoParserStrategy *strategy = nil;
     [self.strategies enumerateObjectsUsingBlock:^(Class StrategyClass, BOOL *stop) {
-        BOOL canHandle = [[StrategyClass sharedInstance] canHandleURL:url];
+        BOOL canHandle = [StrategyClass canHandleURL:url];
         if (canHandle) {
             strategy = [StrategyClass sharedInstance];
             *stop = YES;

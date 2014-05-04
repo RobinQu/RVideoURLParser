@@ -7,16 +7,21 @@
 //
 
 #import "RVideoParserStrategy.h"
+#import <objc/runtime.h>
+
+const char ASSOCIATION_KEY;
 
 @implementation RVideoParserStrategy
 
 + (instancetype)sharedInstance
 {
-    static RVideoParserStrategy *instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [RVideoParserStrategy new];
-    });
+    id instance = objc_getAssociatedObject(self, &ASSOCIATION_KEY);
+
+    if (instance) {
+        return instance;
+    }
+    instance = [self new];
+    objc_setAssociatedObject(self, &ASSOCIATION_KEY, instance, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     return instance;
 }
 
@@ -26,9 +31,9 @@
     return NO;
 }
 
-- (void)parseURL:(NSURL *)url withCallback:(void (^)(NSError *, int *))callback
+- (void)parseURL:(NSURL *)url withCallback:(void (^)(NSError *, RVideoMeta *))callback
 {
-    NSLog(@"should implement in subclass");
+    
 }
 
 @end
